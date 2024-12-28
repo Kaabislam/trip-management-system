@@ -1,0 +1,22 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: transportation-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/transport
+    username: root
+    password: P@ssw0rd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/

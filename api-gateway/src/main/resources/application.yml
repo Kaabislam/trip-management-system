@@ -10,10 +10,10 @@ spring:
             - AuthenticationFilter
 
 
-        - id: restaurant-service
-          uri: lb://RESTAURANT-SERVICE
+        - id: trip-service
+          uri: lb://TRIP-SERVICE
           predicates:
-            - Path=/restaurant/**
+            - Path=/trip/**
           filters:
             - AuthenticationFilter
 

@@ -8,11 +8,11 @@
 		<version>3.0.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kaab.trip-service</groupId>
-	<artifactId>trip-service</artifactId>
+	<groupId>com.kaab.transport-service</groupId>
+	<artifactId>transport-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>trip-service</name>
-	<description>Trip  Service  of trip management Project</description>
+	<name>transport-service</name>
+	<description>Transport  Service  of trip management Project</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -112,6 +112,5 @@
 			</snapshots>
 		</repository>
 	</repositories>
-
 
 </project>
