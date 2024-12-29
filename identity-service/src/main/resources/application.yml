@@ -3,6 +3,12 @@ spring:
     name: IDENTITY-SERVICE
   kafka:
     bootstrap-servers: localhost:9092
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/user-service  # MongoDB URI to connect
+      database: user-service  # The name of the database to use
+      auto-index-creation: true
+  # Eureka Configuration
 
 eureka:
   client:

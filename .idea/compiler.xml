@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
         <module name="trip-service" />
+        <module name="api-gateway" />
         <module name="transport-service" />
         <module name="identity-service" />
         <module name="Location-service" />
         <module name="service-registry" />
+        <module name="notification-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -21,6 +22,7 @@
       <module name="Location-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="identity-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
       <module name="service-registry" options="-parameters" />
       <module name="transport-service" options="-parameters" />
       <module name="trip-service" options="-parameters" />
