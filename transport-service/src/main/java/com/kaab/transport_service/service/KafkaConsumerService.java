@@ -16,7 +16,7 @@ public class KafkaConsumerService {
     @Autowired
     private ObjectMapper objectMapper; // To convert JSON to Java objects
 
-    @KafkaListener(topics = "location-updates", groupId = "transporter-service-group")
+    //@KafkaListener(topics = "location-updates", groupId = "transporter-service-group")
     public void consumeLocationUpdate(String message) {
         try {
             // Convert the Kafka message (JSON) into LocationDto

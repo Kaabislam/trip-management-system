@@ -27,7 +27,7 @@ public class TripService {
     }
 
     private void updateTransporterAvailability(int transporterId, boolean availability) {
-        String url = "http://localhost:9092/transporter/" + transporterId + "/availability?available=" + availability;
+        String url = "http://localhost:9094/transporter/" + transporterId + "/availability?available=" + availability;
         RestTemplate restTemplate = new RestTemplate();
         try {
             restTemplate.put(url, null);  // Make PUT request to update availability
@@ -38,7 +38,8 @@ public class TripService {
 
     public boolean checkTransporterAvailability(Integer transporterId) {
         // Define the URL of the Transporter Service API
-        String transporterServiceUrl = "http://localhost:9092/transporter/" + transporterId + "/available";
+//        String transporterServiceUrl = "http://localhost:9094/transporter/" + transporterId + "/available";
+        String transporterServiceUrl = "http://localhost:9094/transporter/" + transporterId + "/available";
 
         ResponseEntity<String> response = restTemplate.getForEntity(transporterServiceUrl, String.class);
         System.out.println("API Response: " + response.getBody());
