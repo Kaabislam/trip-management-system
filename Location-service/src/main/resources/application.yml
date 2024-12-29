@@ -1,0 +1,23 @@
+server:
+  port: 9093
+
+spring:
+  application:
+    name: location-service
+
+  # MongoDB Configuration
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/location-service  # MongoDB URI to connect
+      database: location-service  # The name of the database to use
+      auto-index-creation: true
+  # Eureka Configuration
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.data.mongodb: DEBUG
