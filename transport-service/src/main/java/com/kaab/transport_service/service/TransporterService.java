@@ -39,4 +39,24 @@ public class TransporterService {
         }
         return Optional.empty();
     }
+
+    public void updateTransporterLocation(int transporterId, double latitude, double longitude) {
+        Optional<Transporter> transporterOpt = transporterRepository.findById(transporterId);
+
+        if (transporterOpt.isPresent()) {
+            Transporter transporter = transporterOpt.get();
+
+            // Update location fields
+            transporter.setCurrentLatitude(latitude);
+            transporter.setCurrentLongitude(longitude);
+            transporter.setLastUpdatedTimestamp(java.time.LocalDateTime.now().toString());
+
+            // Save the updated transporter
+            transporterRepository.save(transporter);
+
+            System.out.println("Transporter location updated: " + transporter);
+        } else {
+            System.out.println("Transporter with ID " + transporterId + " not found.");
+        }
+    }
 }

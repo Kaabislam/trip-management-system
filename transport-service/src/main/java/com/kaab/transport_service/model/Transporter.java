@@ -25,4 +25,11 @@ public class Transporter {
     private String vehicleType; // Example: Truck, Van, etc.
 
     private boolean available;  // Availability status of the transporter
+
+
+    private Double currentLatitude;  // Current latitude of the transporter
+
+    private Double currentLongitude; // Current longitude of the transporter
+
+    private String lastUpdatedTimestamp; // Last update timestamp for location
 }

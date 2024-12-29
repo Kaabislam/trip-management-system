@@ -17,7 +17,17 @@ spring:
       service-url:
         defaultZone: http://localhost:8761/eureka/
 
+  kafka:
+    bootstrap-servers: localhost:9092
+
+
 logging:
   level:
     org.springframework.web: DEBUG
     org.springframework.data.mongodb: DEBUG
+
+
+kafka:
+  topic:
+    location-updates: location-updates
+

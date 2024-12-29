@@ -1,9 +1,12 @@
 package com.kaab.location_service.service;
 
 
+import com.kaab.location_service.dto.LocationUpdateDTO;
 import com.kaab.location_service.model.Location;
 import com.kaab.location_service.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -12,6 +15,10 @@ import java.util.List;
 
 @Service
 public class LocationService {
+    @Autowired
+    private KafkaTemplate<String, LocationUpdateDTO> kafkaTemplate;
+    @Value("${kafka.topic.location-updates}")
+    private String locationUpdatesTopic;
 
     @Autowired
     private LocationRepository locationRepository;
@@ -23,6 +30,16 @@ public class LocationService {
 
         // Create a new location object
         Location location = new Location(transporterId, latitude, longitude, timestamp);
+
+        LocationUpdateDTO dto = new LocationUpdateDTO(
+                location.getTransporterId(),
+                location.getLatitude(),
+                location.getLongitude(),
+                location.getTimestamp()
+        );
+
+        // Publish event to Kafka
+        kafkaTemplate.send(locationUpdatesTopic, dto);
 
         // Save the location to MongoDB
         return locationRepository.save(location);
