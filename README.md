@@ -1,3 +1,7 @@
+System Architecture Diagram
+![image](https://github.com/user-attachments/assets/b69f6a4b-2515-4f25-9c78-a20a5245bb5a)
+
+
 Trip Management System
 Overview
 
