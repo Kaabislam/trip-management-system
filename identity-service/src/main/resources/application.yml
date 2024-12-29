@@ -1,6 +1,8 @@
 spring:
   application:
     name: IDENTITY-SERVICE
+  kafka:
+    bootstrap-servers: localhost:9092
 
 eureka:
   client:
@@ -10,3 +12,7 @@ eureka:
 
 server:
   port: 9898
+
+kafka:
+  topic:
+    user-info: user-info
