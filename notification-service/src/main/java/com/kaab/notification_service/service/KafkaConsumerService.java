@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class KafkaConsumerService {
-
+    @Autowired
+    private NotificationService notificationService;
 
     @Autowired
     private ObjectMapper objectMapper; // To convert JSON to Java objects
@@ -19,7 +20,7 @@ public class KafkaConsumerService {
         try {
             // Convert the Kafka message (JSON) into LocationDto
             UserInformationDto userInformationDto = objectMapper.readValue(message, UserInformationDto.class);
-
+            notificationService.sendSimpleMail(userInformationDto);
             System.out.println("user information from the kafka listener" + userInformationDto);
         } catch (Exception e) {
             System.err.println("Error processing Kafka message: " + e.getMessage());

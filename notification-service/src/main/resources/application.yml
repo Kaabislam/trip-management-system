@@ -4,10 +4,11 @@ server:
 spring:
   application:
     name: NOTIFICATION-SERVICE
-
-
-
-
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: ee33c71ae07b86
+    password: 156d48fd85e95b
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
