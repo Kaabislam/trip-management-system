@@ -22,7 +22,7 @@ API Gateway
 The API Gateway acts as the single entry point to the system and handles:
 
     Routing requests to appropriate microservices.
-    Authentication and authorization using OAuth2/JWT.
+    Authentication and authorization using JWT.
     Rate limiting to control the number of requests per client.
     Centralized logging and monitoring.
 
